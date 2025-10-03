@@ -1,15 +1,12 @@
 from fastapi import FastAPI
 from fastapi.testclient import TestClient 
-from auth import get_current_user
+from main import app
 
 from rooms_crud import router
 
 def override_get_current_user():
     return {"username": "test_staff", "role": "staff"}
 
-app = FastAPI()
-app.include_router(router)
-app.dependency_overrides[get_current_user] = override_get_current_user
 client = TestClient(app)
 
 def test_read_root(): 
