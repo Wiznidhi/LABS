@@ -13,8 +13,8 @@ app.dependency_overrides[get_current_user] = override_get_current_user
 client = TestClient(app)
 
 def test_read_root(): 
-    # r = client.get("/") 
-    # assert r.status_code == 200 
+    r = client.get("/") 
+    assert r.status_code == 200 
     pass
 
 def test_create_and_get_room(): 
