@@ -1,2 +1,11 @@
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+fastapi
+uvicorn
+pydantic
+sqlalchemy
+aiosqlite
+databases
+python-multipart
+python-jose
+pytest
+httpx
+requests
