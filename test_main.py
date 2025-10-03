@@ -15,7 +15,7 @@ client = TestClient(app)
 def test_read_root(): 
     r = client.get("/") 
     assert r.status_code == 200 
-    pass
+    assert r.json()=={"message": "Welcome to the Hotel API!"}
 
 def test_create_and_get_room(): 
     payload = {"number":"200","type":"double","price":120,"capacity":2} 
